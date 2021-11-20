@@ -50,6 +50,7 @@ error_log($path);
 error_log($token);
 error_log(json_encode($query, JSON_UNESCAPED_UNICODE));
 
+
 // validate
 
 if (!$v) response(error_response(1002, 'Invalid request: v (version API) is required'));
@@ -71,7 +72,25 @@ else {
     // routes (auth)
     if ($path == 'auth.logout') call('POST', $method, NULL, 'Session::logout');
     // routes (users)
+    
     // your methods here ...
-    // routes (not found)
-    response(error_response(1002, 'Application authorization failed: method is unavailable with service token.'));
+    if ($path == 'user.get') {
+        if(isset($headers['user_id'])) {
+            $user_info = User::user_info($headers);
+            response($user_info);
+        }   
+    } else if ($path == 'user.update') {
+        $user_update = User::owner_update($headers);
+    } else if($path == 'notifications.get') {
+        $user_notifications = User::user_get_notifications($headers);
+        response($user_notifications);
+    } else if($path == 'notifications.read') {
+        $user_notifications = User::user_read_notifications($headers);
+        response('sucefull');
+    } else {
+         // routes (not found)
+        response(error_response(1002, 'Application authorization failed: method is unavailable with service token.'));
+    }
+   
 }
+

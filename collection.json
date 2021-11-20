@@ -149,6 +149,217 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "user.get",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "v",
+								"value": "{{v}}",
+								"type": "text"
+							},
+							{
+								"key": "project",
+								"value": "{{project}}",
+								"type": "text"
+							},
+							{
+								"key": "user_id",
+								"value": "{{user_id}}",
+								"type": "text"
+							}
+
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{host}}/user.get",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user.get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user.update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "v",
+								"value": "{{v}}",
+								"type": "text"
+							},
+							{
+								"key": "project",
+								"value": "{{project}}",
+								"type": "text"
+							},
+							{
+								"key": "user_id",
+								"value": "{{user_id}}",
+								"type": "text"
+							},
+							{
+								"key": "first_name",
+								"value": "{{first_name}}",
+								"type": "text"
+							},
+							{
+								"key": "last_name",
+								"value": "{{last_name}}",
+								"type": "text"
+							},
+							{
+								"key": "middle_name",
+								"value": "{{middle_name}}",
+								"type": "text"
+							},
+							{
+								"key": "phone",
+								"value": "{{phone}}",
+								"type": "text"
+							},
+							{
+								"key": "email",
+								"value": "{{email}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{host}}/user.update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user.update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "notifications.get",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "v",
+								"value": "{{v}}",
+								"type": "text"
+							},
+							{
+								"key": "project",
+								"value": "{{project}}",
+								"type": "text"
+							},
+							{
+								"key": "user_id",
+								"value": "{{user_id}}",
+								"type": "text"
+							},
+							{
+								"key": "not_viewed",
+								"value": "{{true}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{host}}/notifications.get",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"notifications.get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "notifications.read",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "v",
+								"value": "{{v}}",
+								"type": "text"
+							},
+							{
+								"key": "project",
+								"value": "{{project}}",
+								"type": "text"
+							},
+							{
+								"key": "user_id",
+								"value": "{{user_id}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{host}}/notifications.read",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"notifications.read"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
